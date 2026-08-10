@@ -13,6 +13,17 @@ use App\Http\Resources\UserResource;
 
 class LoginController extends BaseController
 {
+
+    /**
+         * Return current authenticated user data.
+         */
+        public function me(Request $request)
+        {
+            return response()->json([
+                'authenticated' => true,
+                'user' => $request->user(),
+            ]);
+        }
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [

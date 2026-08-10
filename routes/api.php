@@ -9,6 +9,7 @@ use App\Http\Controllers\_Test\OnlineUsers;
 use App\Http\Controllers\Books\BooksController;
 use App\Http\Controllers\Books\AuthorController;
 use App\Http\Controllers\Books\DeweyDecimalController;
+use Illuminate\Http\Request;
 // use App\Http\Controllers\Books\AuthorController;
 
 
@@ -20,6 +21,8 @@ use App\Http\Controllers\Books\DeweyDecimalController;
         Route::middleware('auth:sanctum')->group(function () {
             Route::post('user/logout', [LogoutController::class, 'logout']);
         });
+
+        Route::middleware('auth:sanctum')->get('/user/me', [LoginController::class, 'me']);
     // User Route
 
     // Books Route
