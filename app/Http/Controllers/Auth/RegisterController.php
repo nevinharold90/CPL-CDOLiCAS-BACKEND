@@ -133,4 +133,17 @@ class RegisterController extends BaseController
                 'data'   => UserResource::collection($adminsAndDevs)
             ]);
         }
+
+        public function indexClient()
+        {
+            // Fetch users where the role is either 'Admin' OR 'Dev'
+            $adminsAndDevs = User::with('userCredential')
+                ->whereIn('role', ['client'])
+                ->paginate(10); // 10 users per page
+
+            return response()->json([
+                'status' => 'success',
+                'data'   => UserResource::collection($adminsAndDevs)
+            ]);
+        }
 }

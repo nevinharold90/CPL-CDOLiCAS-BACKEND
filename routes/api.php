@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 
     // User Route
         Route::post('user/admin/register', [RegisterController::class, 'createAdmin']);
+        Route::post('user/client/register', [RegisterController::class, 'clientRegister']);
         Route::get('user/admin/index', [RegisterController::class, 'indexAdmin']);
 
         Route::post('user/login', [LoginController::class, 'login']);
