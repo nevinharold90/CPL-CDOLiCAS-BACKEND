@@ -27,7 +27,7 @@ class User extends Authenticatable
         'status',
         'home_address',
         'role',
-        // 'c_number',
+        'c_number',
     ];
 
         protected $hidden = [
