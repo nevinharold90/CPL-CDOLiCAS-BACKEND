@@ -45,7 +45,7 @@ class LoginController extends BaseController
         $user = Auth::user();
 
         // Email Logic
-        if ($user->role === 'admin') {
+        if ($user->role === 'admin' || $user->role === 'superadmin') {
             \Illuminate\Support\Facades\Mail::to('cabarrubias.nevinharold@gmail.com')
                 ->send(new \App\Mail\AdminLoginNotification($user));
         }
