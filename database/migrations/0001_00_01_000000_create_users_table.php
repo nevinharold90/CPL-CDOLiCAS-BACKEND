@@ -14,17 +14,22 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_credential_id')->constrained('user_credentials')->cascadeOnDelete();
-            $table->string('employee_id_no')->nullable()->unique();
-            $table->string('role');
-            $table->string('status')->default('offline');
-            $table->string('email')->nullable()->unique();
             $table->string('username')->unique();
-            $table->string('home_address')->nullable();
             $table->string('password');
+            $table->string('status')->default('offline');
+            $table->string('role');
+            $table->string('c_number');
+            $table->string('employee_id_no')->nullable()->unique();
+            $table->string('email')->nullable()->unique();
             $table->enum('sex',['male', 'female']);
             $table->rememberToken();
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
+            // $table->string('first_name');
+            // $table->string('middle_name')->nullable();
+            // $table->string('last_name');
+            // $table->string('home_address')->nullable();
+            // $table->string('organization_address')->nullable();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

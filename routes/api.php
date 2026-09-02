@@ -14,9 +14,10 @@ use Illuminate\Http\Request;
 
 
     // User Route
-        Route::post('user/admin/register', [RegisterController::class, 'createAdmin']);
-        Route::post('user/client/register', [RegisterController::class, 'clientRegister']);
+        Route::post('user/register/admin', [RegisterController::class, 'createAdmin']);
+        Route::post('user/register/client', [RegisterController::class, 'clientRegister']);
         Route::get('user/admin/index', [RegisterController::class, 'indexAdmin']);
+        Route::get('user/client/index', [RegisterController::class, 'indexClient']);
 
         Route::post('user/login', [LoginController::class, 'login']);
         Route::middleware('auth:sanctum')->group(function () {

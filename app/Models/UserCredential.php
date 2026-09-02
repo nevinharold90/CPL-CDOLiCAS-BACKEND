@@ -6,16 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserCredential extends Model
 {
-    protected $fillable = [
-        'last_name',
+        protected $fillable = [
         'first_name',
         'middle_name',
-        'organization_office',
+        'last_name',
         'address',
-        'role',
         'c_number',
-        'has_account',
+        'organization_office',
         'office_address',
+        'has_account',
     ];
 
     public function readSessions()

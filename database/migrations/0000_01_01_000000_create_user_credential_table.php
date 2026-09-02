@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('organization_office')->nullable();
             $table->string('address')->nullable();
             $table->string('c_number')->nullable();
-            $table->string('role')->nullable();
             $table->boolean('has_account')->default(false);
             $table->string('office_address')->nullable();
             $table->timestamps();
+            // $table->string('role')->nullable();
             // $table->foreignId('users_id')->constrained('users')->cascadeOnDelete();
             // $table->integer('age');
             // $table->date('birthdate');
